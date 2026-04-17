@@ -8,6 +8,16 @@ import pytest
 from scripts import retrain
 
 
+class DummyModel:
+    """Module-level stand-in so pickle can resolve it by qualified name."""
+    pass
+
+
+class DummyEncoder:
+    """Module-level stand-in so pickle can resolve it by qualified name."""
+    pass
+
+
 def make_dataset(tmp_path, n=200):
     """Build a minimally valid compatibility dataset."""
     rows = []
@@ -116,11 +126,6 @@ def test_should_promote_accepts_improvement():
 
 
 def test_promote_creates_backup(tmp_path):
-    class DummyModel:
-        pass
-    class DummyEncoder:
-        pass
-
     # existing model
     with open(tmp_path / "model.pkl", "wb") as f:
         pickle.dump(DummyModel(), f)
