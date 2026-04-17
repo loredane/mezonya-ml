@@ -219,7 +219,7 @@ def normalize_product(raw_product: dict, details: dict) -> dict:
         # Tous les produits Matter certifiés supportent Apple/Google/Alexa/SmartThings
         "ecosystems": ["apple", "google", "alexa", "smartthings"],
         "hub_required": "thread" in connectivity,  # Thread needs border router
-        "cloud_dependency": "optional",  # Matter = local par conception
+        "cloud_dependency": "local_only",  # Matter = local par conception (fabric local)
         "matter_version": details.get("matter_version"),
         "certification_id": details.get("certification_id"),
         "certification_date": details.get("certification_date"),

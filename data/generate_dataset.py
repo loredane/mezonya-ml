@@ -266,12 +266,18 @@ def hub_conflict(hub_a: bool, hub_b: bool, conn_a: list, conn_b: list) -> int:
 
 
 def cloud_compatibility(cloud_a: str, cloud_b: str) -> int:
+    """Feature Option B - flag cloud-path friction between a device pair.
+
+    Returns 0 (friction) when:
+        * both devices require their own cloud (two apps, no shared orchestration)
+        * one is local_only and the other requires cloud (no shared control plane)
+    Returns 1 otherwise. Mirrors api/main.py:_cloud_compatible at inference time.
     """
-    Deux appareils 'cloud required' de marques différentes
-    = deux apps différentes, friction pour l'utilisateur.
-    """
-    if cloud_a == "required" and cloud_b == "required":
-        return 0  # potential friction
+    pair = frozenset({cloud_a, cloud_b})
+    if pair == frozenset({"required"}):
+        return 0
+    if pair == frozenset({"local_only", "required"}):
+        return 0
     return 1
 
 
@@ -376,7 +382,9 @@ def augment_with_synthetic_devices(n_synthetic: int = 30, seed: int = 42) -> lis
     categories = ["security", "lighting", "climate", "audio", "comfort", "energy", "access"]
     protocols = ["wifi", "zigbee", "bluetooth", "zwave", "matter", "thread"]
     ecos = ["apple", "google", "alexa"]
-    clouds = ["optional", "required"]
+    # Option B - 4-value enum to match the real catalog distribution.
+    clouds = ["optional", "required", "local_only", "none"]
+    clouds_p = [0.45, 0.30, 0.20, 0.05]
 
     synthetic = []
     for i in range(n_synthetic):
@@ -390,7 +398,7 @@ def augment_with_synthetic_devices(n_synthetic: int = 30, seed: int = 42) -> lis
             "connectivity": list(rng.choice(protocols, size=n_proto, replace=False)),
             "ecosystems": list(rng.choice(ecos, size=n_eco, replace=False)),
             "hub_required": bool(rng.choice([True, False], p=[0.3, 0.7])),
-            "cloud_dependency": rng.choice(clouds, p=[0.6, 0.4]),
+            "cloud_dependency": str(rng.choice(clouds, p=clouds_p)),
         })
     return synthetic
 
@@ -415,9 +423,28 @@ def add_noise(df: pd.DataFrame, noise_rate: float = 0.05, seed: int = 42) -> pd.
     return df
 
 
+def _load_committed_catalog() -> list[dict]:
+    """Load data/device_catalog.json - the single source of truth for devices.
+
+    The catalog is produced offline by data/collectors/merge_catalogs.py and
+    committed to the repo. generate_dataset.py READS it (never rewrites it)
+    so training tracks the real product population - including FORIA and
+    every other brand added via collectors.
+    """
+    catalog_path = os.path.join(
+        os.path.dirname(os.path.abspath(__file__)), "device_catalog.json"
+    )
+    with open(catalog_path) as f:
+        return json.load(f)
+
+
 def generate_dataset(augment: bool = True, noise: bool = True) -> pd.DataFrame:
-    """Pipeline complet de génération du dataset."""
-    all_devices = PRODUCTS.copy()
+    """Pipeline complet de génération du dataset.
+
+    Source de vérité = data/device_catalog.json (committé). augment ajoute des
+    appareils synthétiques uniquement pour l'entraînement (pas le catalogue API).
+    """
+    all_devices = _load_committed_catalog()
     if augment:
         all_devices.extend(augment_with_synthetic_devices())
 
@@ -449,10 +476,5 @@ if __name__ == "__main__":
     output_path = os.path.join(output_dir, "compatibility_dataset.csv")
     df.to_csv(output_path, index=False)
     print(f"\nsaved: {output_path}")
-
-    # Sauvegarder aussi le catalogue complet en JSON (pour l'API)
-    catalog_path = os.path.join(output_dir, "device_catalog.json")
-    all_devices = PRODUCTS + augment_with_synthetic_devices()
-    with open(catalog_path, "w") as f:
-        json.dump(all_devices, f, indent=2)
-    print(f"catalog: {catalog_path}")
+    # NOTE: device_catalog.json is read-only here. It is the committed source
+    # of truth, produced offline by data/collectors/merge_catalogs.py.

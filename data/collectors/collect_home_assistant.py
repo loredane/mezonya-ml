@@ -179,20 +179,30 @@ def detect_ecosystems(text: str) -> list[str]:
 
 
 def detect_cloud_dependency(iot_class: Optional[str], text: str) -> str:
-    """Détermine la dépendance cloud : required / optional / none."""
-    if not iot_class:
-        return "unknown"
+    """Détermine la dépendance cloud : required / optional / local_only / none.
 
-    if "cloud" in iot_class:
-        # Vérifier si local est aussi supporté
+    Values align with DeviceSpec.cloud_dependency in api/main.py:
+        required   : cannot function without an external cloud service
+        optional   : cloud enhances features but local operation is possible
+        local_only : works entirely offline, no cloud path
+        none       : not applicable (non-connected accessory, unknown)
+    """
+    if not iot_class:
+        return "none"
+
+    iot_class_l = iot_class.lower()
+
+    if "cloud" in iot_class_l:
+        # Cloud-based, but may expose a local API as fallback
         if "local" in text.lower() and "api" in text.lower():
             return "optional"
         return "required"
 
-    if "local" in iot_class:
-        return "none"
+    if "local" in iot_class_l:
+        # local_push, local_polling → fully local operation
+        return "local_only"
 
-    return "unknown"
+    return "none"
 
 
 def detect_hub_required(text: str, iot_class: Optional[str]) -> bool:

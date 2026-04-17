@@ -57,7 +57,10 @@ jobs:
           name: model-artifacts
           path: models/
 
-      - run: pip install pandas numpy && python data/generate_dataset.py
+      # NOTE: do NOT regenerate the dataset here. data/device_catalog.json is
+      # committed and the Docker build uses it as-is. The CSV (training data)
+      # was already produced in the `test` job; the deploy job only needs the
+      # model artifact and the repo checkout to build the image.
 
       - uses: google-github-actions/auth@v2
         with:

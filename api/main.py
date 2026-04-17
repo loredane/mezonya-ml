@@ -107,7 +107,7 @@ app.add_middleware(
 Connectivity = Literal["zigbee", "wifi", "bluetooth", "zwave", "matter", "thread", "ethernet"]
 Ecosystem = Literal["apple", "google", "alexa", "smartthings", "ha"]
 Category = Literal["security", "lighting", "climate", "energy", "comfort", "audio", "access"]
-CloudDependency = Literal["required", "optional", "none"]
+CloudDependency = Literal["required", "optional", "local_only", "none"]
 Compatibility = Literal["compatible", "partial", "incompatible"]
 
 
@@ -168,6 +168,21 @@ CATEGORY_SYNERGY = {
 }
 
 
+def _cloud_compatible(a_dep: str, b_dep: str) -> int:
+    """Option B friction rule - mirrors data/generate_dataset.py:cloud_compatibility.
+
+    Two devices can share a cloud-level control plane unless:
+        * both require their own cloud (two apps, no shared orchestration), or
+        * one is local_only and the other is required (no common plane at all).
+    """
+    pair = frozenset({a_dep, b_dep})
+    if pair == frozenset({"required"}):
+        return 0
+    if pair == frozenset({"local_only", "required"}):
+        return 0
+    return 1
+
+
 def build_features(a: DeviceSpec, b: DeviceSpec) -> list:
     """Return the 15-feature vector for one pair. Same logic as scripts/train.py."""
     conn_a, conn_b = set(a.connectivity), set(b.connectivity)
@@ -182,7 +197,7 @@ def build_features(a: DeviceSpec, b: DeviceSpec) -> list:
         (a.hub_required and not b.hub_required and "zigbee" in conn_a and "zigbee" not in conn_b)
         or (b.hub_required and not a.hub_required and "zigbee" in conn_b and "zigbee" not in conn_a)
     )
-    cloud_compatible = int(not (a.cloud_dependency == "required" and b.cloud_dependency == "required"))
+    cloud_compatible = _cloud_compatible(a.cloud_dependency, b.cloud_dependency)
     category_synergy = CATEGORY_SYNERGY.get(frozenset({a.category, b.category}), 0.4)
 
     encoder = state["encoder"]

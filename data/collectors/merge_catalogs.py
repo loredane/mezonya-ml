@@ -93,6 +93,25 @@ def make_device_key(device: dict) -> str:
     return f"{brand}__{name}"
 
 
+VALID_CLOUD_DEPENDENCY = frozenset({"required", "optional", "local_only", "none"})
+
+
+def _normalize_cloud_dependency(value, device_name: str = "") -> str:
+    """Coerce any cloud_dependency value to the 4-value enum.
+
+    Legacy values ('unknown', None, typos) fall back to 'none' with a warning
+    so downstream schema validation stays green while flagging data-quality
+    issues in the collector output.
+    """
+    if value in VALID_CLOUD_DEPENDENCY:
+        return value
+    import logging
+    logging.getLogger("merge_catalogs").warning(
+        "invalid cloud_dependency=%r for %r, defaulting to 'none'", value, device_name
+    )
+    return "none"
+
+
 def unify_device_schema(device: dict) -> dict:
     """Force le schéma Mezonya standard sur un appareil de n'importe quelle source."""
     return {
@@ -103,7 +122,9 @@ def unify_device_schema(device: dict) -> dict:
         "connectivity": sorted(set(device.get("connectivity", []))),
         "ecosystems": sorted(set(device.get("ecosystems", []))),
         "hub_required": bool(device.get("hub_required", False)),
-        "cloud_dependency": device.get("cloud_dependency", "unknown"),
+        "cloud_dependency": _normalize_cloud_dependency(
+            device.get("cloud_dependency"), device.get("name", "")
+        ),
         "source": device.get("source", "mezonya"),
         "metadata": {
             "matter_version": device.get("matter_version"),
