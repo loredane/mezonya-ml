@@ -1,0 +1,25 @@
+{
+  "feature_columns": [
+    "protocol_overlap",
+    "ecosystem_overlap",
+    "same_brand",
+    "hub_conflict",
+    "cloud_compatible",
+    "category_synergy",
+    "both_hub_required",
+    "total_protocols",
+    "total_ecosystems",
+    "device_a_hub_required",
+    "device_b_hub_required",
+    "device_a_cloud_required",
+    "device_b_cloud_required",
+    "device_a_category_encoded",
+    "device_b_category_encoded"
+  ],
+  "label_names": [
+    "incompatible",
+    "partial",
+    "compatible"
+  ],
+  "model_version": "20260411_171640"
+}

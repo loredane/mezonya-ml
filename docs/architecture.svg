@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" font-family="-apple-system, BlinkMacSystemFont, system-ui, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#444"/>
+    </marker>
+    <style>
+      .box { fill: #fff; stroke: #222; stroke-width: 1.5; }
+      .box-api { fill: #e8f4ff; stroke: #0b72d6; }
+      .box-ml  { fill: #fff3e0; stroke: #ef6c00; }
+      .box-mon { fill: #f3e5f5; stroke: #7b1fa2; }
+      .box-ext { fill: #f5f5f5; stroke: #555; }
+      .label { font-size: 13px; fill: #111; }
+      .sub   { font-size: 11px; fill: #555; }
+      .title { font-size: 14px; font-weight: 600; fill: #111; }
+      .flow-label { font-size: 11px; fill: #444; font-style: italic; }
+      line { stroke: #444; stroke-width: 1.5; fill: none; }
+    </style>
+  </defs>
+
+  <!-- title -->
+  <text x="450" y="30" text-anchor="middle" font-size="16" font-weight="600" fill="#111">Mezonya compatibility service, MLOps architecture</text>
+
+  <!-- client -->
+  <rect class="box box-ext" x="30"  y="220" width="140" height="70" rx="6"/>
+  <text class="title" x="100" y="250" text-anchor="middle">mezonya.com</text>
+  <text class="sub"   x="100" y="268" text-anchor="middle">Netlify (static)</text>
+  <text class="sub"   x="100" y="282" text-anchor="middle">compatibility quiz</text>
+
+  <!-- API -->
+  <rect class="box box-api" x="230" y="195" width="180" height="120" rx="6"/>
+  <text class="title" x="320" y="220" text-anchor="middle">FastAPI</text>
+  <text class="sub"   x="320" y="240" text-anchor="middle">Cloud Run · europe-west1</text>
+  <text class="label" x="245" y="262">POST /predict</text>
+  <text class="label" x="245" y="280">POST /predict-catalog</text>
+  <text class="label" x="245" y="298">GET  /health</text>
+
+  <!-- Model -->
+  <rect class="box box-ml" x="470" y="220" width="160" height="70" rx="6"/>
+  <text class="title" x="550" y="248" text-anchor="middle">XGBoost model</text>
+  <text class="sub"   x="550" y="268" text-anchor="middle">pickle + encoder</text>
+  <text class="sub"   x="550" y="282" text-anchor="middle">F1 macro 0.87</text>
+
+  <!-- Model registry -->
+  <rect class="box box-ml" x="700" y="220" width="170" height="70" rx="6"/>
+  <text class="title" x="785" y="248" text-anchor="middle">Artifact Registry</text>
+  <text class="sub"   x="785" y="268" text-anchor="middle">docker images, tagged</text>
+  <text class="sub"   x="785" y="282" text-anchor="middle">per git SHA</text>
+
+  <!-- arrows top row -->
+  <line x1="170" y1="255" x2="230" y2="255" marker-end="url(#arrow)"/>
+  <text class="flow-label" x="200" y="248" text-anchor="middle">HTTPS</text>
+
+  <line x1="410" y1="255" x2="470" y2="255" marker-end="url(#arrow)"/>
+  <line x1="630" y1="255" x2="700" y2="255" marker-end="url(#arrow)" stroke-dasharray="4,3"/>
+  <text class="flow-label" x="665" y="248" text-anchor="middle">pulls on deploy</text>
+
+  <!-- CI/CD -->
+  <rect class="box" x="230" y="80" width="400" height="80" rx="6"/>
+  <text class="title" x="430" y="105" text-anchor="middle">GitHub Actions, ci-cd.yml</text>
+  <text class="sub"   x="250" y="127">push main  >  test  >  train  >  docker build  >  deploy</text>
+  <text class="sub"   x="250" y="145">cron  0 3 * * 0  >  retrain  >  tests  >  promote if better</text>
+
+  <line x1="320" y1="160" x2="320" y2="195" marker-end="url(#arrow)"/>
+  <text class="flow-label" x="340" y="180">deploy</text>
+
+  <!-- Monitoring -->
+  <rect class="box box-mon" x="230" y="365" width="400" height="100" rx="6"/>
+  <text class="title" x="430" y="390" text-anchor="middle">Evidently + KS drift tests</text>
+  <text class="sub"   x="250" y="412">reads production logs · compares to training set</text>
+  <text class="sub"   x="250" y="430">data drift · prediction drift · accuracy vs installer feedback</text>
+  <text class="sub"   x="250" y="448">alert if drift_share &gt; 30% or accuracy &lt; 80% > trigger retrain</text>
+
+  <line x1="320" y1="315" x2="320" y2="365" marker-end="url(#arrow)"/>
+  <text class="flow-label" x="340" y="342">prediction logs</text>
+
+  <line x1="550" y1="365" x2="550" y2="180" marker-end="url(#arrow)" stroke-dasharray="4,3"/>
+  <text class="flow-label" x="570" y="280">retrain alert</text>
+
+  <!-- Installer feedback -->
+  <rect class="box box-ext" x="700" y="385" width="170" height="70" rx="6"/>
+  <text class="title" x="785" y="413" text-anchor="middle">Installer feedback</text>
+  <text class="sub"   x="785" y="433" text-anchor="middle">Mezonya mobile app</text>
+  <text class="sub"   x="785" y="447" text-anchor="middle">writes to data/feedback/</text>
+
+  <line x1="700" y1="415" x2="630" y2="415" marker-end="url(#arrow)"/>
+</svg>

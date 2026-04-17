@@ -1,0 +1,795 @@
+[
+  {
+    "id": 1,
+    "name": "Aqara Camera Hub G3",
+    "brand": "Aqara",
+    "category": "security",
+    "connectivity": [
+      "zigbee",
+      "wifi"
+    ],
+    "ecosystems": [
+      "apple",
+      "google",
+      "alexa"
+    ],
+    "hub_required": false,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 2,
+    "name": "Philips Hue Starter Kit",
+    "brand": "Philips",
+    "category": "lighting",
+    "connectivity": [
+      "zigbee",
+      "wifi"
+    ],
+    "ecosystems": [
+      "apple",
+      "google",
+      "alexa"
+    ],
+    "hub_required": true,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 3,
+    "name": "Ecobee Smart Thermostat",
+    "brand": "Ecobee",
+    "category": "climate",
+    "connectivity": [
+      "wifi"
+    ],
+    "ecosystems": [
+      "apple",
+      "google",
+      "alexa"
+    ],
+    "hub_required": false,
+    "cloud_dependency": "required"
+  },
+  {
+    "id": 4,
+    "name": "Yale Assure Lock 2",
+    "brand": "Yale",
+    "category": "security",
+    "connectivity": [
+      "wifi",
+      "bluetooth"
+    ],
+    "ecosystems": [
+      "apple",
+      "google",
+      "alexa"
+    ],
+    "hub_required": false,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 5,
+    "name": "Sonos Era 300",
+    "brand": "Sonos",
+    "category": "audio",
+    "connectivity": [
+      "wifi",
+      "bluetooth"
+    ],
+    "ecosystems": [
+      "apple",
+      "google",
+      "alexa"
+    ],
+    "hub_required": false,
+    "cloud_dependency": "required"
+  },
+  {
+    "id": 6,
+    "name": "SwitchBot Curtain 3",
+    "brand": "SwitchBot",
+    "category": "comfort",
+    "connectivity": [
+      "bluetooth",
+      "wifi"
+    ],
+    "ecosystems": [
+      "apple",
+      "google",
+      "alexa"
+    ],
+    "hub_required": false,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 7,
+    "name": "Aqara Door Sensor",
+    "brand": "Aqara",
+    "category": "security",
+    "connectivity": [
+      "zigbee"
+    ],
+    "ecosystems": [
+      "apple",
+      "google",
+      "alexa"
+    ],
+    "hub_required": true,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 8,
+    "name": "Nanoleaf Shapes",
+    "brand": "Nanoleaf",
+    "category": "lighting",
+    "connectivity": [
+      "wifi"
+    ],
+    "ecosystems": [
+      "apple",
+      "google",
+      "alexa"
+    ],
+    "hub_required": false,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 9,
+    "name": "Tado Smart AC Control",
+    "brand": "Tado",
+    "category": "climate",
+    "connectivity": [
+      "wifi"
+    ],
+    "ecosystems": [
+      "apple",
+      "google",
+      "alexa"
+    ],
+    "hub_required": false,
+    "cloud_dependency": "required"
+  },
+  {
+    "id": 10,
+    "name": "Ring Video Doorbell",
+    "brand": "Ring",
+    "category": "security",
+    "connectivity": [
+      "wifi"
+    ],
+    "ecosystems": [
+      "alexa"
+    ],
+    "hub_required": false,
+    "cloud_dependency": "required"
+  },
+  {
+    "id": 11,
+    "name": "Aqara Smart Plug",
+    "brand": "Aqara",
+    "category": "energy",
+    "connectivity": [
+      "zigbee"
+    ],
+    "ecosystems": [
+      "apple",
+      "google",
+      "alexa"
+    ],
+    "hub_required": true,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 12,
+    "name": "Apple HomePod Mini",
+    "brand": "Apple",
+    "category": "audio",
+    "connectivity": [
+      "wifi",
+      "bluetooth"
+    ],
+    "ecosystems": [
+      "apple"
+    ],
+    "hub_required": false,
+    "cloud_dependency": "required"
+  },
+  {
+    "id": 13,
+    "name": "Google Nest Mini",
+    "brand": "Google",
+    "category": "audio",
+    "connectivity": [
+      "wifi",
+      "bluetooth"
+    ],
+    "ecosystems": [
+      "google"
+    ],
+    "hub_required": false,
+    "cloud_dependency": "required"
+  },
+  {
+    "id": 14,
+    "name": "Eve Motion Sensor",
+    "brand": "Eve",
+    "category": "security",
+    "connectivity": [
+      "bluetooth"
+    ],
+    "ecosystems": [
+      "apple"
+    ],
+    "hub_required": false,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 15,
+    "name": "Yeelight LED Bulb",
+    "brand": "Yeelight",
+    "category": "lighting",
+    "connectivity": [
+      "wifi"
+    ],
+    "ecosystems": [
+      "apple",
+      "google",
+      "alexa"
+    ],
+    "hub_required": false,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 16,
+    "name": "SwitchBot Hub Mini",
+    "brand": "SwitchBot",
+    "category": "comfort",
+    "connectivity": [
+      "wifi"
+    ],
+    "ecosystems": [
+      "apple",
+      "google",
+      "alexa"
+    ],
+    "hub_required": false,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 17,
+    "name": "Aqara Water Leak Sensor",
+    "brand": "Aqara",
+    "category": "security",
+    "connectivity": [
+      "zigbee"
+    ],
+    "ecosystems": [
+      "apple",
+      "google",
+      "alexa"
+    ],
+    "hub_required": true,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 18,
+    "name": "Eufy RoboVac X10",
+    "brand": "Eufy",
+    "category": "comfort",
+    "connectivity": [
+      "wifi"
+    ],
+    "ecosystems": [
+      "google",
+      "alexa"
+    ],
+    "hub_required": false,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 19,
+    "name": "Meross Garage Opener",
+    "brand": "Meross",
+    "category": "access",
+    "connectivity": [
+      "wifi"
+    ],
+    "ecosystems": [
+      "apple",
+      "google",
+      "alexa"
+    ],
+    "hub_required": false,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 20,
+    "name": "SONOFF Mini Switch",
+    "brand": "SONOFF",
+    "category": "lighting",
+    "connectivity": [
+      "wifi"
+    ],
+    "ecosystems": [
+      "google",
+      "alexa"
+    ],
+    "hub_required": false,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 100,
+    "name": "Synthetic Device 0",
+    "brand": "Yeelight",
+    "category": "comfort",
+    "connectivity": [
+      "thread"
+    ],
+    "ecosystems": [
+      "apple",
+      "google",
+      "alexa"
+    ],
+    "hub_required": false,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 101,
+    "name": "Synthetic Device 1",
+    "brand": "Eufy",
+    "category": "energy",
+    "connectivity": [
+      "matter",
+      "bluetooth"
+    ],
+    "ecosystems": [
+      "apple"
+    ],
+    "hub_required": true,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 102,
+    "name": "Synthetic Device 2",
+    "brand": "Shelly",
+    "category": "access",
+    "connectivity": [
+      "wifi",
+      "zigbee"
+    ],
+    "ecosystems": [
+      "google",
+      "alexa"
+    ],
+    "hub_required": false,
+    "cloud_dependency": "required"
+  },
+  {
+    "id": 103,
+    "name": "Synthetic Device 3",
+    "brand": "SONOFF",
+    "category": "lighting",
+    "connectivity": [
+      "bluetooth",
+      "zwave"
+    ],
+    "ecosystems": [
+      "apple"
+    ],
+    "hub_required": true,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 104,
+    "name": "Synthetic Device 4",
+    "brand": "Yale",
+    "category": "lighting",
+    "connectivity": [
+      "wifi"
+    ],
+    "ecosystems": [
+      "apple",
+      "alexa",
+      "google"
+    ],
+    "hub_required": true,
+    "cloud_dependency": "required"
+  },
+  {
+    "id": 105,
+    "name": "Synthetic Device 5",
+    "brand": "Yale",
+    "category": "energy",
+    "connectivity": [
+      "matter",
+      "bluetooth"
+    ],
+    "ecosystems": [
+      "alexa",
+      "google",
+      "apple"
+    ],
+    "hub_required": false,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 106,
+    "name": "Synthetic Device 6",
+    "brand": "Meross",
+    "category": "security",
+    "connectivity": [
+      "zigbee",
+      "bluetooth"
+    ],
+    "ecosystems": [
+      "alexa",
+      "google",
+      "apple"
+    ],
+    "hub_required": false,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 107,
+    "name": "Synthetic Device 7",
+    "brand": "Tado",
+    "category": "climate",
+    "connectivity": [
+      "zwave"
+    ],
+    "ecosystems": [
+      "apple"
+    ],
+    "hub_required": true,
+    "cloud_dependency": "required"
+  },
+  {
+    "id": 108,
+    "name": "Synthetic Device 8",
+    "brand": "Shelly",
+    "category": "access",
+    "connectivity": [
+      "zwave",
+      "wifi"
+    ],
+    "ecosystems": [
+      "google",
+      "apple"
+    ],
+    "hub_required": false,
+    "cloud_dependency": "required"
+  },
+  {
+    "id": 109,
+    "name": "Synthetic Device 9",
+    "brand": "SONOFF",
+    "category": "access",
+    "connectivity": [
+      "matter",
+      "zigbee"
+    ],
+    "ecosystems": [
+      "apple",
+      "alexa",
+      "google"
+    ],
+    "hub_required": true,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 110,
+    "name": "Synthetic Device 10",
+    "brand": "Yale",
+    "category": "energy",
+    "connectivity": [
+      "zigbee",
+      "wifi"
+    ],
+    "ecosystems": [
+      "alexa",
+      "google"
+    ],
+    "hub_required": false,
+    "cloud_dependency": "required"
+  },
+  {
+    "id": 111,
+    "name": "Synthetic Device 11",
+    "brand": "SwitchBot",
+    "category": "audio",
+    "connectivity": [
+      "wifi",
+      "bluetooth",
+      "zigbee"
+    ],
+    "ecosystems": [
+      "apple",
+      "google",
+      "alexa"
+    ],
+    "hub_required": false,
+    "cloud_dependency": "required"
+  },
+  {
+    "id": 112,
+    "name": "Synthetic Device 12",
+    "brand": "Meross",
+    "category": "security",
+    "connectivity": [
+      "matter"
+    ],
+    "ecosystems": [
+      "google"
+    ],
+    "hub_required": true,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 113,
+    "name": "Synthetic Device 13",
+    "brand": "Ring",
+    "category": "audio",
+    "connectivity": [
+      "bluetooth"
+    ],
+    "ecosystems": [
+      "alexa",
+      "apple"
+    ],
+    "hub_required": false,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 114,
+    "name": "Synthetic Device 14",
+    "brand": "Philips",
+    "category": "audio",
+    "connectivity": [
+      "zigbee"
+    ],
+    "ecosystems": [
+      "apple",
+      "google",
+      "alexa"
+    ],
+    "hub_required": true,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 115,
+    "name": "Synthetic Device 15",
+    "brand": "Yale",
+    "category": "access",
+    "connectivity": [
+      "zwave",
+      "zigbee",
+      "matter"
+    ],
+    "ecosystems": [
+      "alexa",
+      "google"
+    ],
+    "hub_required": false,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 116,
+    "name": "Synthetic Device 16",
+    "brand": "Ring",
+    "category": "audio",
+    "connectivity": [
+      "wifi",
+      "zigbee"
+    ],
+    "ecosystems": [
+      "apple",
+      "google",
+      "alexa"
+    ],
+    "hub_required": false,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 117,
+    "name": "Synthetic Device 17",
+    "brand": "Aqara",
+    "category": "access",
+    "connectivity": [
+      "thread",
+      "zwave"
+    ],
+    "ecosystems": [
+      "alexa"
+    ],
+    "hub_required": false,
+    "cloud_dependency": "required"
+  },
+  {
+    "id": 118,
+    "name": "Synthetic Device 18",
+    "brand": "Shelly",
+    "category": "security",
+    "connectivity": [
+      "bluetooth"
+    ],
+    "ecosystems": [
+      "apple"
+    ],
+    "hub_required": false,
+    "cloud_dependency": "required"
+  },
+  {
+    "id": 119,
+    "name": "Synthetic Device 19",
+    "brand": "Shelly",
+    "category": "climate",
+    "connectivity": [
+      "zigbee"
+    ],
+    "ecosystems": [
+      "apple",
+      "alexa"
+    ],
+    "hub_required": false,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 120,
+    "name": "Synthetic Device 20",
+    "brand": "Xiaomi",
+    "category": "energy",
+    "connectivity": [
+      "wifi"
+    ],
+    "ecosystems": [
+      "google",
+      "alexa",
+      "apple"
+    ],
+    "hub_required": true,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 121,
+    "name": "Synthetic Device 21",
+    "brand": "Tado",
+    "category": "access",
+    "connectivity": [
+      "thread",
+      "zigbee"
+    ],
+    "ecosystems": [
+      "google"
+    ],
+    "hub_required": false,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 122,
+    "name": "Synthetic Device 22",
+    "brand": "Tado",
+    "category": "climate",
+    "connectivity": [
+      "thread",
+      "zwave"
+    ],
+    "ecosystems": [
+      "apple",
+      "google",
+      "alexa"
+    ],
+    "hub_required": false,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 123,
+    "name": "Synthetic Device 23",
+    "brand": "TP-Link",
+    "category": "security",
+    "connectivity": [
+      "bluetooth",
+      "matter"
+    ],
+    "ecosystems": [
+      "alexa",
+      "google",
+      "apple"
+    ],
+    "hub_required": false,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 124,
+    "name": "Synthetic Device 24",
+    "brand": "Ecobee",
+    "category": "audio",
+    "connectivity": [
+      "zigbee",
+      "matter",
+      "thread"
+    ],
+    "ecosystems": [
+      "google",
+      "apple"
+    ],
+    "hub_required": false,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 125,
+    "name": "Synthetic Device 25",
+    "brand": "Ecobee",
+    "category": "energy",
+    "connectivity": [
+      "wifi",
+      "matter"
+    ],
+    "ecosystems": [
+      "apple",
+      "alexa",
+      "google"
+    ],
+    "hub_required": false,
+    "cloud_dependency": "required"
+  },
+  {
+    "id": 126,
+    "name": "Synthetic Device 26",
+    "brand": "Eve",
+    "category": "access",
+    "connectivity": [
+      "matter",
+      "zwave"
+    ],
+    "ecosystems": [
+      "alexa",
+      "google"
+    ],
+    "hub_required": false,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 127,
+    "name": "Synthetic Device 27",
+    "brand": "SONOFF",
+    "category": "energy",
+    "connectivity": [
+      "wifi",
+      "zigbee"
+    ],
+    "ecosystems": [
+      "apple",
+      "alexa",
+      "google"
+    ],
+    "hub_required": false,
+    "cloud_dependency": "required"
+  },
+  {
+    "id": 128,
+    "name": "Synthetic Device 28",
+    "brand": "TP-Link",
+    "category": "audio",
+    "connectivity": [
+      "thread"
+    ],
+    "ecosystems": [
+      "alexa"
+    ],
+    "hub_required": true,
+    "cloud_dependency": "required"
+  },
+  {
+    "id": 129,
+    "name": "Synthetic Device 29",
+    "brand": "Tuya",
+    "category": "climate",
+    "connectivity": [
+      "wifi"
+    ],
+    "ecosystems": [
+      "google"
+    ],
+    "hub_required": false,
+    "cloud_dependency": "optional"
+  }
+]

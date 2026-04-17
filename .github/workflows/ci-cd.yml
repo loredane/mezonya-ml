@@ -1,0 +1,122 @@
+name: ci-cd
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    # weekly retrain, sundays 03:00 UTC
+    - cron: "0 3 * * 0"
+
+env:
+  PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+  REGION: europe-west1
+  REPO: mezonya-docker
+  SERVICE: mezonya-compatibility-api
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: build dataset
+        run: python data/generate_dataset.py
+
+      - name: train
+        run: python scripts/train.py --data data/compatibility_dataset.csv --output models
+
+      - name: pytest
+        run: pytest tests/ -v --tb=short
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: model-artifacts
+          path: models/
+          retention-days: 30
+
+  deploy:
+    needs: test
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: model-artifacts
+          path: models/
+
+      - run: pip install pandas numpy && python data/generate_dataset.py
+
+      - uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GCP_SA_KEY }}
+
+      - uses: google-github-actions/setup-gcloud@v2
+
+      - name: configure docker
+        run: gcloud auth configure-docker ${{ env.REGION }}-docker.pkg.dev --quiet
+
+      - name: build and push
+        run: |
+          IMAGE=${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPO }}/${{ env.SERVICE }}
+          docker build -t $IMAGE:${{ github.sha }} -t $IMAGE:latest .
+          docker push $IMAGE:${{ github.sha }}
+          docker push $IMAGE:latest
+
+      - name: deploy cloud run
+        run: |
+          IMAGE=${{ env.REGION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPO }}/${{ env.SERVICE }}
+          gcloud run deploy ${{ env.SERVICE }} \
+            --image $IMAGE:${{ github.sha }} \
+            --region ${{ env.REGION }} \
+            --platform managed \
+            --allow-unauthenticated \
+            --memory 1Gi \
+            --cpu 1 \
+            --max-instances 3 \
+            --port 8080 \
+            --set-env-vars MODEL_DIR=models,CATALOG_PATH=data/device_catalog.json
+
+  retrain:
+    if: github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: retrain
+        run: python scripts/retrain.py --data data/compatibility_dataset.csv --model-dir models
+
+      - name: test retrained model
+        run: pytest tests/ -v --tb=short
+
+      - name: commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "actions@github.com"
+          git add models/ data/
+          git diff --staged --quiet || {
+            git commit -m "chore(retrain): $(date -u +%Y-%m-%d)"
+            git push
+          }

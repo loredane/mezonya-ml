@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mezonya.com/schemas/device.schema.json",
+  "title": "DeviceSpec",
+  "description": "Smart-home device specification used by the compatibility model. Must match the Literal types in api/main.py.",
+  "type": "object",
+  "required": ["brand", "category", "connectivity", "ecosystems"],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "integer",
+      "description": "Stable catalog identifier"
+    },
+    "name": {
+      "type": "string",
+      "description": "Human-readable product name"
+    },
+    "brand": {
+      "type": "string",
+      "minLength": 1
+    },
+    "category": {
+      "type": "string",
+      "enum": ["security", "lighting", "climate", "energy", "comfort", "audio", "access"]
+    },
+    "connectivity": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": ["zigbee", "wifi", "bluetooth", "zwave", "matter", "thread", "ethernet"]
+      }
+    },
+    "ecosystems": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": ["apple", "google", "alexa", "smartthings", "ha"]
+      }
+    },
+    "hub_required": {
+      "type": "boolean",
+      "default": false
+    },
+    "cloud_dependency": {
+      "type": "string",
+      "enum": ["required", "optional", "none"],
+      "default": "optional"
+    }
+  }
+}

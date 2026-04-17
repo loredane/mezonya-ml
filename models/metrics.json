@@ -1,0 +1,27 @@
+{
+  "accuracy": 0.8734693877551021,
+  "f1_macro": 0.8681837757419153,
+  "f1_weighted": 0.8725093123930334,
+  "cv_f1_macro": 0.904535007154684,
+  "mean_confidence": 0.9339832616907332,
+  "feature_importance": {
+    "protocol_overlap": 0.42597450066679915,
+    "ecosystem_overlap": 0.26808951887109217,
+    "hub_conflict": 0.09692656224271089,
+    "category_synergy": 0.04503636743064266,
+    "cloud_compatible": 0.03750738501086097,
+    "device_b_category_encoded": 0.02668654112977539,
+    "device_a_category_encoded": 0.024299454466446827,
+    "total_protocols": 0.017630573526487045,
+    "same_brand": 0.015778931358863713,
+    "device_b_cloud_required": 0.01217911792722898,
+    "device_b_hub_required": 0.010959364142481144,
+    "device_a_hub_required": 0.00710708004337467,
+    "device_a_cloud_required": 0.005986937321202332,
+    "total_ecosystems": 0.004689566014975517,
+    "both_hub_required": 0.0011480998470585143
+  },
+  "model_version": "20260411_171640",
+  "timestamp": "2026-04-11T17:16:40.752811",
+  "note": "Trained with sklearn GradientBoosting (equivalent XGBoost). Replace with xgboost in production."
+}
