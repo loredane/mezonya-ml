@@ -1,0 +1,791 @@
+[
+  {
+    "id": 51,
+    "name": "FORIA Smart Lock P70",
+    "brand": "FORIA",
+    "category": "security",
+    "connectivity": [
+      "zigbee"
+    ],
+    "ecosystems": [
+      "alexa",
+      "google"
+    ],
+    "hub_required": true,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 52,
+    "name": "FORIA Smart Lock P80",
+    "brand": "FORIA",
+    "category": "security",
+    "connectivity": [
+      "zigbee"
+    ],
+    "ecosystems": [
+      "alexa",
+      "google"
+    ],
+    "hub_required": true,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 53,
+    "name": "FORIA Smart Lock T28",
+    "brand": "FORIA",
+    "category": "security",
+    "connectivity": [
+      "zigbee"
+    ],
+    "ecosystems": [
+      "alexa",
+      "google"
+    ],
+    "hub_required": true,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 54,
+    "name": "FORIA Pan-Tilt Camera 1080P",
+    "brand": "FORIA",
+    "category": "security",
+    "connectivity": [
+      "wifi"
+    ],
+    "ecosystems": [
+      "alexa",
+      "google"
+    ],
+    "hub_required": false,
+    "cloud_dependency": "required"
+  },
+  {
+    "id": 55,
+    "name": "FORIA Motion Sensor (PIR)",
+    "brand": "FORIA",
+    "category": "security",
+    "connectivity": [
+      "zigbee"
+    ],
+    "ecosystems": [
+      "alexa",
+      "google"
+    ],
+    "hub_required": true,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 56,
+    "name": "FORIA Door/Window Sensor",
+    "brand": "FORIA",
+    "category": "security",
+    "connectivity": [
+      "zigbee"
+    ],
+    "ecosystems": [
+      "alexa",
+      "google"
+    ],
+    "hub_required": true,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 57,
+    "name": "FORIA Water Leak Sensor",
+    "brand": "FORIA",
+    "category": "security",
+    "connectivity": [
+      "zigbee"
+    ],
+    "ecosystems": [
+      "alexa",
+      "google"
+    ],
+    "hub_required": true,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 58,
+    "name": "FORIA Smoke Sensor",
+    "brand": "FORIA",
+    "category": "security",
+    "connectivity": [
+      "zigbee"
+    ],
+    "ecosystems": [
+      "alexa",
+      "google"
+    ],
+    "hub_required": true,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 59,
+    "name": "FORIA Gas Leak Sensor",
+    "brand": "FORIA",
+    "category": "security",
+    "connectivity": [
+      "zigbee"
+    ],
+    "ecosystems": [
+      "alexa",
+      "google"
+    ],
+    "hub_required": true,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 60,
+    "name": "FORIA Sound & Light Alarm",
+    "brand": "FORIA",
+    "category": "security",
+    "connectivity": [
+      "zigbee"
+    ],
+    "ecosystems": [
+      "alexa",
+      "google"
+    ],
+    "hub_required": true,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 61,
+    "name": "FORIA Smart Spotlight",
+    "brand": "FORIA",
+    "category": "lighting",
+    "connectivity": [
+      "zigbee"
+    ],
+    "ecosystems": [
+      "alexa",
+      "google",
+      "apple"
+    ],
+    "hub_required": true,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 62,
+    "name": "FORIA Smart Grille Light",
+    "brand": "FORIA",
+    "category": "lighting",
+    "connectivity": [
+      "zigbee"
+    ],
+    "ecosystems": [
+      "alexa",
+      "google",
+      "apple"
+    ],
+    "hub_required": true,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 63,
+    "name": "FORIA Smart Downlight",
+    "brand": "FORIA",
+    "category": "lighting",
+    "connectivity": [
+      "zigbee"
+    ],
+    "ecosystems": [
+      "alexa",
+      "google",
+      "apple"
+    ],
+    "hub_required": true,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 64,
+    "name": "FORIA Magnetic Track Light 20mm",
+    "brand": "FORIA",
+    "category": "lighting",
+    "connectivity": [
+      "zigbee"
+    ],
+    "ecosystems": [
+      "alexa",
+      "google",
+      "apple"
+    ],
+    "hub_required": true,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 65,
+    "name": "FORIA Magnetic Track Light 16mm",
+    "brand": "FORIA",
+    "category": "lighting",
+    "connectivity": [
+      "zigbee"
+    ],
+    "ecosystems": [
+      "alexa",
+      "google",
+      "apple"
+    ],
+    "hub_required": true,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 66,
+    "name": "FORIA Smart Linear LED Strip",
+    "brand": "FORIA",
+    "category": "lighting",
+    "connectivity": [
+      "zigbee"
+    ],
+    "ecosystems": [
+      "alexa",
+      "google",
+      "apple"
+    ],
+    "hub_required": true,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 67,
+    "name": "FORIA X-Series Ceiling Light",
+    "brand": "FORIA",
+    "category": "lighting",
+    "connectivity": [
+      "zigbee"
+    ],
+    "ecosystems": [
+      "alexa",
+      "google",
+      "apple"
+    ],
+    "hub_required": true,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 68,
+    "name": "FORIA Smart Host 10\" Knob",
+    "brand": "FORIA",
+    "category": "comfort",
+    "connectivity": [
+      "wifi",
+      "zigbee",
+      "bluetooth"
+    ],
+    "ecosystems": [
+      "alexa",
+      "google",
+      "apple"
+    ],
+    "hub_required": false,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 69,
+    "name": "FORIA Smart Host 10\"",
+    "brand": "FORIA",
+    "category": "comfort",
+    "connectivity": [
+      "wifi",
+      "zigbee"
+    ],
+    "ecosystems": [
+      "alexa",
+      "google"
+    ],
+    "hub_required": false,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 70,
+    "name": "FORIA Smart Host 7\"",
+    "brand": "FORIA",
+    "category": "comfort",
+    "connectivity": [
+      "wifi",
+      "zigbee"
+    ],
+    "ecosystems": [
+      "alexa",
+      "google"
+    ],
+    "hub_required": false,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 71,
+    "name": "FORIA Smart Host 4\" H8",
+    "brand": "FORIA",
+    "category": "comfort",
+    "connectivity": [
+      "wifi",
+      "zigbee"
+    ],
+    "ecosystems": [
+      "alexa",
+      "google"
+    ],
+    "hub_required": false,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 72,
+    "name": "FORIA 9-Scene Smart Remote",
+    "brand": "FORIA",
+    "category": "comfort",
+    "connectivity": [
+      "zigbee"
+    ],
+    "ecosystems": [
+      "alexa",
+      "google"
+    ],
+    "hub_required": true,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 73,
+    "name": "FORIA Mobile Dimming Knob",
+    "brand": "FORIA",
+    "category": "comfort",
+    "connectivity": [
+      "zigbee"
+    ],
+    "ecosystems": [
+      "alexa",
+      "google"
+    ],
+    "hub_required": true,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 74,
+    "name": "FORIA Curtain Motor 500D",
+    "brand": "FORIA",
+    "category": "comfort",
+    "connectivity": [
+      "zigbee"
+    ],
+    "ecosystems": [
+      "alexa",
+      "google",
+      "apple"
+    ],
+    "hub_required": true,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 75,
+    "name": "FORIA Curtain Motor 200D",
+    "brand": "FORIA",
+    "category": "comfort",
+    "connectivity": [
+      "zigbee"
+    ],
+    "ecosystems": [
+      "alexa",
+      "google",
+      "apple"
+    ],
+    "hub_required": true,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 76,
+    "name": "FORIA Temperature & Humidity Sensor",
+    "brand": "FORIA",
+    "category": "comfort",
+    "connectivity": [
+      "zigbee"
+    ],
+    "ecosystems": [
+      "alexa",
+      "google",
+      "apple"
+    ],
+    "hub_required": true,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 77,
+    "name": "FORIA Air Quality Detector",
+    "brand": "FORIA",
+    "category": "comfort",
+    "connectivity": [
+      "zigbee"
+    ],
+    "ecosystems": [
+      "alexa",
+      "google"
+    ],
+    "hub_required": true,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 78,
+    "name": "FORIA Human Presence Sensor (mmWave)",
+    "brand": "FORIA",
+    "category": "comfort",
+    "connectivity": [
+      "zigbee"
+    ],
+    "ecosystems": [
+      "alexa",
+      "google"
+    ],
+    "hub_required": true,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 79,
+    "name": "FORIA 4-Button Scene Switch",
+    "brand": "FORIA",
+    "category": "comfort",
+    "connectivity": [
+      "zigbee"
+    ],
+    "ecosystems": [
+      "alexa",
+      "google"
+    ],
+    "hub_required": true,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 80,
+    "name": "FORIA USB Smart Socket",
+    "brand": "FORIA",
+    "category": "comfort",
+    "connectivity": [
+      "zigbee"
+    ],
+    "ecosystems": [
+      "alexa",
+      "google"
+    ],
+    "hub_required": true,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 81,
+    "name": "FORIA Multi-Mode Wireless Gateway",
+    "brand": "FORIA",
+    "category": "comfort",
+    "connectivity": [
+      "wifi",
+      "zigbee",
+      "bluetooth"
+    ],
+    "ecosystems": [
+      "alexa",
+      "google",
+      "apple"
+    ],
+    "hub_required": false,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 82,
+    "name": "FORIA Central AC Gateway B17",
+    "brand": "FORIA",
+    "category": "climate",
+    "connectivity": [
+      "zigbee",
+      "wifi"
+    ],
+    "ecosystems": [
+      "alexa",
+      "google"
+    ],
+    "hub_required": false,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 83,
+    "name": "FORIA VRF AC Gateway B27",
+    "brand": "FORIA",
+    "category": "climate",
+    "connectivity": [
+      "wifi",
+      "zigbee"
+    ],
+    "ecosystems": [
+      "alexa",
+      "google"
+    ],
+    "hub_required": false,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 84,
+    "name": "FORIA VRF Temperature Control Panel",
+    "brand": "FORIA",
+    "category": "climate",
+    "connectivity": [
+      "zigbee"
+    ],
+    "ecosystems": [
+      "alexa",
+      "google"
+    ],
+    "hub_required": true,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 85,
+    "name": "FORIA Floor Heating Control Panel",
+    "brand": "FORIA",
+    "category": "climate",
+    "connectivity": [
+      "zigbee"
+    ],
+    "ecosystems": [
+      "alexa",
+      "google"
+    ],
+    "hub_required": true,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 86,
+    "name": "FORIA Fresh Air System Controller",
+    "brand": "FORIA",
+    "category": "climate",
+    "connectivity": [
+      "zigbee"
+    ],
+    "ecosystems": [
+      "alexa",
+      "google"
+    ],
+    "hub_required": true,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 87,
+    "name": "FORIA Ceiling Speaker S52G",
+    "brand": "FORIA",
+    "category": "audio",
+    "connectivity": [
+      "wifi"
+    ],
+    "ecosystems": [
+      "alexa",
+      "google",
+      "apple"
+    ],
+    "hub_required": false,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 88,
+    "name": "FORIA Ceiling Speaker S52T",
+    "brand": "FORIA",
+    "category": "audio",
+    "connectivity": [
+      "wifi"
+    ],
+    "ecosystems": [
+      "alexa",
+      "google",
+      "apple"
+    ],
+    "hub_required": false,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 89,
+    "name": "FORIA Bluetooth Speaker S530-B Main",
+    "brand": "FORIA",
+    "category": "audio",
+    "connectivity": [
+      "bluetooth",
+      "wifi"
+    ],
+    "ecosystems": [
+      "alexa",
+      "google",
+      "apple"
+    ],
+    "hub_required": false,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 90,
+    "name": "FORIA Bluetooth Speaker S530 Slave",
+    "brand": "FORIA",
+    "category": "audio",
+    "connectivity": [
+      "bluetooth"
+    ],
+    "ecosystems": [
+      "alexa",
+      "google",
+      "apple"
+    ],
+    "hub_required": true,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 91,
+    "name": "FORIA Italian Snail 5.1 Home Theater",
+    "brand": "FORIA",
+    "category": "audio",
+    "connectivity": [
+      "wifi"
+    ],
+    "ecosystems": [
+      "alexa",
+      "google",
+      "apple"
+    ],
+    "hub_required": false,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 92,
+    "name": "FORIA Italian Snail 7.1 Home Theater",
+    "brand": "FORIA",
+    "category": "audio",
+    "connectivity": [
+      "wifi"
+    ],
+    "ecosystems": [
+      "alexa",
+      "google",
+      "apple"
+    ],
+    "hub_required": false,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 93,
+    "name": "FORIA US Atlantic 7.2.2 Dolby Atmos",
+    "brand": "FORIA",
+    "category": "audio",
+    "connectivity": [
+      "wifi"
+    ],
+    "ecosystems": [
+      "alexa",
+      "google",
+      "apple"
+    ],
+    "hub_required": false,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 94,
+    "name": "FORIA US Atlantic 9.2.6 Dolby Atmos",
+    "brand": "FORIA",
+    "category": "audio",
+    "connectivity": [
+      "wifi"
+    ],
+    "ecosystems": [
+      "alexa",
+      "google",
+      "apple"
+    ],
+    "hub_required": false,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 95,
+    "name": "FORIA Wall AP BA1200L",
+    "brand": "FORIA",
+    "category": "energy",
+    "connectivity": [
+      "wifi",
+      "ethernet"
+    ],
+    "ecosystems": [
+      "alexa",
+      "google",
+      "apple"
+    ],
+    "hub_required": false,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 96,
+    "name": "FORIA Ceiling AP BA3000C",
+    "brand": "FORIA",
+    "category": "energy",
+    "connectivity": [
+      "wifi",
+      "ethernet"
+    ],
+    "ecosystems": [
+      "alexa",
+      "google",
+      "apple"
+    ],
+    "hub_required": false,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 97,
+    "name": "FORIA Ceiling AP BA5400C",
+    "brand": "FORIA",
+    "category": "energy",
+    "connectivity": [
+      "wifi",
+      "ethernet"
+    ],
+    "ecosystems": [
+      "alexa",
+      "google",
+      "apple"
+    ],
+    "hub_required": false,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 98,
+    "name": "FORIA Router BR3000W Wi-Fi 6",
+    "brand": "FORIA",
+    "category": "energy",
+    "connectivity": [
+      "wifi",
+      "ethernet"
+    ],
+    "ecosystems": [
+      "alexa",
+      "google",
+      "apple"
+    ],
+    "hub_required": false,
+    "cloud_dependency": "optional"
+  },
+  {
+    "id": 99,
+    "name": "FORIA PoE Switch S9G-P",
+    "brand": "FORIA",
+    "category": "energy",
+    "connectivity": [
+      "ethernet"
+    ],
+    "ecosystems": [],
+    "hub_required": false,
+    "cloud_dependency": "local_only"
+  },
+  {
+    "id": 100,
+    "name": "FORIA Engineering Wireless Gateway",
+    "brand": "FORIA",
+    "category": "energy",
+    "connectivity": [
+      "wifi",
+      "zigbee",
+      "bluetooth",
+      "ethernet"
+    ],
+    "ecosystems": [
+      "alexa",
+      "google",
+      "apple"
+    ],
+    "hub_required": false,
+    "cloud_dependency": "optional"
+  }
+]
