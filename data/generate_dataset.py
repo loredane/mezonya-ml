@@ -1,6 +1,15 @@
 """Génère un dataset de paires d'appareils avec labels de compatibilité
-à partir du catalogue réel Mezonya et de règles expertes validées
-par des installateurs certifiés.
+à partir du catalogue Mezonya et d'une règle expert bootstrapée.
+
+La règle (weights + thresholds dans compute_compatibility_label) encode
+des heuristiques documentées dans la doc Home Assistant, la doc Matter
+Alliance et les compatibility matrices constructeurs. Elle n'a PAS été
+validée par étude formelle avec installateurs certifiés — c'est un
+bootstrap, destiné à être progressivement remplacé par les labels
+remontés via le feedback loop (scripts/monitor.py -> scripts/retrain.py).
+
+Voir docs/MODEL_CARD.md > Relationship to the labeling rule pour la
+narrative complète.
 
 Labels:
   2 = compatible
@@ -28,7 +37,7 @@ PROTOCOL_FREQUENCIES = {
     "thread": "2.4GHz",
 }
 
-# Règles expertes de compatibilité (validées par installateurs)
+# Règles expertes de compatibilité (bootstrap heuristique, voir docs/MODEL_CARD.md)
 def compute_protocol_overlap(conn_a: list, conn_b: list) -> float:
     """Ratio de protocoles partagés entre deux appareils."""
     set_a, set_b = set(conn_a), set(conn_b)
