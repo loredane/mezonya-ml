@@ -21,7 +21,7 @@
     "partial",
     "compatible"
   ],
-  "model_version": "20260418_072412",
+  "model_version": "20260418_081720",
   "xgboost_params": {
     "n_estimators": 200,
     "max_depth": 4,

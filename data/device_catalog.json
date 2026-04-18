@@ -77,7 +77,6 @@
     ],
     "ecosystems": [
       "apple",
-      "google",
       "alexa"
     ],
     "hub_required": false,
@@ -89,15 +88,14 @@
     "brand": "SwitchBot",
     "category": "comfort",
     "connectivity": [
-      "bluetooth",
-      "wifi"
+      "bluetooth"
     ],
     "ecosystems": [
       "apple",
       "google",
       "alexa"
     ],
-    "hub_required": false,
+    "hub_required": true,
     "cloud_dependency": "optional"
   },
   {
@@ -122,7 +120,8 @@
     "brand": "Nanoleaf",
     "category": "lighting",
     "connectivity": [
-      "wifi"
+      "wifi",
+      "thread"
     ],
     "ecosystems": [
       "apple",
@@ -214,12 +213,15 @@
     "brand": "Eve",
     "category": "security",
     "connectivity": [
-      "bluetooth"
+      "bluetooth",
+      "thread"
     ],
     "ecosystems": [
-      "apple"
+      "apple",
+      "google",
+      "alexa"
     ],
-    "hub_required": false,
+    "hub_required": true,
     "cloud_dependency": "optional"
   },
   {
@@ -934,11 +936,7 @@
     "connectivity": [
       "bluetooth"
     ],
-    "ecosystems": [
-      "alexa",
-      "google",
-      "apple"
-    ],
+    "ecosystems": [],
     "hub_required": true,
     "cloud_dependency": "optional"
   },
