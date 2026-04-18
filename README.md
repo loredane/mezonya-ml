@@ -26,7 +26,7 @@ The catalog has a few hundred devices. Compatibility is non-trivial: a Zigbee se
 
 | | choice | why |
 |---|---|---|
-| model | XGBoost | tabular data, small dataset (1225 pairs), feature-importance for installer trust |
+| model | XGBoost | tabular data, small dataset (4950 pairs), feature-importance for installer trust |
 | serving | FastAPI | async, OpenAPI out of the box, pydantic validation |
 | deployment | Cloud Run | scale-to-zero, pay-per-request, one YAML to deploy |
 | ci/cd | GitHub Actions | same repo, no extra infra |
