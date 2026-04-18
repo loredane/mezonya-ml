@@ -44,7 +44,7 @@ See `models/metrics.json` for the live production numbers.
 - **Distribution**: trained on a catalog skewed toward the EU/MENA markets and toward mid-to-premium price tiers. Performance on budget no-name Shenzhen brands is untested.
 - **Cold start**: a brand-new device category (not in `encoder.classes_`) falls back to a generic encoding. Expect confidence < 0.6; flag for installer review.
 - **Matter bridges**: the feature set does not explicitly model Matter bridges. A pair where one side is a Matter bridge may be flagged `partial` when it's actually `compatible` through the bridge. Accepted trade-off while Matter adoption ramps.
-- **Small dataset**: 1225 pairs is enough for stable F1 at this feature count, but does not support subgroup evaluation (see Fairness).
+- **Small dataset**: 4950 pairs is enough for stable F1 at this feature count, but does not support subgroup evaluation (see Fairness).
 
 ## Fairness and ethical considerations
 
