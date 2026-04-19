@@ -1,26 +1,7 @@
 {
-  "accuracy": 0.9393939393939394,
-  "f1_macro": 0.9401476421166999,
-  "f1_weighted": 0.9391083991974756,
-  "mean_confidence": 0.9230992197990417,
-  "feature_importance": {
-    "protocol_overlap": "0.30200288",
-    "hub_conflict": "0.14482607",
-    "ecosystem_overlap": "0.12151423",
-    "same_brand": "0.105268136",
-    "category_synergy": "0.052128393",
-    "device_b_hub_required": "0.05168901",
-    "both_hub_required": "0.04643325",
-    "total_protocols": "0.038185235",
-    "cloud_compatible": "0.027438894",
-    "device_a_hub_required": "0.02406682",
-    "device_a_cloud_required": "0.02163224",
-    "total_ecosystems": "0.019098327",
-    "device_b_cloud_required": "0.01645487",
-    "device_b_category_encoded": "0.015695607",
-    "device_a_category_encoded": "0.013566113"
-  },
-  "timestamp": "2026-04-18T08:17:20.986182+00:00",
-  "cv_f1_macro": 0.9410524632209263,
-  "model_version": "20260418_081720"
+  "accuracy": 0.9404040404040404,
+  "f1_macro": 0.9411368949967308,
+  "timestamp": "2026-04-19T05:26:26.189238+00:00",
+  "dataset_size": 4950,
+  "model_version": "20260419_052626"
 }
